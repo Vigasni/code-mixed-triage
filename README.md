@@ -93,5 +93,5 @@ What we would do next
 Team
 <Vigasni R> and <Ananya H>.
 Acknowledgements
-Bitext for the customer support dataset, Groq for the free model access, and Streamlit for the app framework.
+Bitext for the customer support dataset, Groq for the free model access, and Streamlit for the app framework
 
