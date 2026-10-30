@@ -50,6 +50,7 @@ What we learned along the way
 •	The English-only baseline is a bad referee. We first let it override the LLM when the two disagreed. On our development messages it disagreed with the LLM three times on clear messages and was wrong every time, and it added several false escalations without catching a single real error. We turned that rule off and kept the baseline only as a comparison.
 •	LLM confidence is not very informative. Messages the model understood sat between 0.75 and 0.96, while vague ones sat between 0.15 and 0.30. A threshold separates "understood" from "vague" well, but it cannot tell a right answer from a confidently wrong one. This is why we added the NONE category and the extra rules instead of relying on a threshold alone.
 •	Prompt edits can move the problem around. Fixing one "where is my parcel" mistake nudged another message across the ORDER and DELIVERY boundary, so we stopped editing the prompt for single examples and froze it before running the final evaluation.
+
 Limitations
 We would rather say these ourselves than have you find them:
 •	The training data is synthetic English, so the system has never been trained on Tanglish or Hinglish. It leans on the LLM for those.
@@ -73,6 +74,7 @@ To rebuild the baseline and re-run the evaluation:
 python baseline.py     # trains the baseline, writes baseline.joblib and bitext_test.csv
 python -u eval.py      # runs both test sets, writes results_codemixed.csv and metrics.json
 If the baseline fails to load because of a scikit-learn version mismatch, run python baseline.py again on your own machine.
+
 What is in the repository
 File	Purpose
 app.py	The Streamlit app (Inbox, Test results, Queue dashboard)
@@ -85,13 +87,16 @@ tune.py	Compares escalation settings on the development set
 dev_set.csv	Development messages used for tuning
 data/codemixed_test.csv	The code-mixed test set (kept out of prompts and tuning)
 results_codemixed.csv, metrics.json	Evaluation outputs shown in the app
+
 What we would do next
 •	Pick few-shot examples by similarity to the incoming message instead of using a fixed set.
 •	Collect real code-mixed messages from volunteers and grow the test set well beyond 40.
 •	Teach the system the cases it currently mixes up, with a clearer boundary between ORDER and DELIVERY.
 •	Check whether a smaller, cheaper model holds up on the same test set.
+
 Team
 Vigasni R and Ananya H.
+
 Acknowledgements
 Bitext for the customer support dataset, Groq for the free model access, and Streamlit for the app framework
 
