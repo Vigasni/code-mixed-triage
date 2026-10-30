@@ -163,9 +163,13 @@ data/codemixed_test.csv-The code-mixed test set (kept out of prompts and tuning)
 results_codemixed.csv, metrics.json-Evaluation outputs shown in the app.
 
 What we would do next
+
 •	Pick few-shot examples by similarity to the incoming message instead of using a fixed set.
+
 •	Collect real code-mixed messages from volunteers and grow the test set well beyond 40.
+
 •	Teach the system the cases it currently mixes up, with a clearer boundary between ORDER and DELIVERY.
+
 •	Check whether a smaller, cheaper model holds up on the same test set.
 
 Team
