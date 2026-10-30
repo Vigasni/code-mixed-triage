@@ -91,7 +91,7 @@ What we would do next
 •	Teach the system the cases it currently mixes up, with a clearer boundary between ORDER and DELIVERY.
 •	Check whether a smaller, cheaper model holds up on the same test set.
 Team
-<Vigasni R> and <Ananya H>.
+Vigasni R and Ananya H.
 Acknowledgements
 Bitext for the customer support dataset, Groq for the free model access, and Streamlit for the app framework
 
