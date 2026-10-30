@@ -138,18 +138,29 @@ python -u eval.py      # runs both test sets, writes results_codemixed.csv and m
 
 If the baseline fails to load because of a scikit-learn version mismatch, run python baseline.py again on your own machine.
 
-What is in the repository
-File	Purpose
-app.py	The Streamlit app (Inbox, Test results, Queue dashboard)
-llm.py	Prompt, model call and output validation
-escalate.py	The escalation rules
-data.py	Loads and cleans the Bitext data
-baseline.py	Trains the TF-IDF and logistic regression baseline
-eval.py	Evaluation on the English sample and the code-mixed test set
-tune.py	Compares escalation settings on the development set
-dev_set.csv	Development messages used for tuning
-data/codemixed_test.csv	The code-mixed test set (kept out of prompts and tuning)
-results_codemixed.csv, metrics.json	Evaluation outputs shown in the app
+What is in the repository:
+
+File and Purpose
+
+app.py-The Streamlit app (Inbox, Test results, Queue dashboard).
+
+llm.py-Prompt, model call and output validation.
+
+escalate.py-The escalation rules.
+
+data.py-Loads and cleans the Bitext data.
+
+baseline.py-Trains the TF-IDF and logistic regression baseline.
+
+eval.py-Evaluation on the English sample and the code-mixed test set.
+
+tune.py-Compares escalation settings on the development set.
+
+dev_set.csv-Development messages used for tuning.
+
+data/codemixed_test.csv-The code-mixed test set (kept out of prompts and tuning).
+
+results_codemixed.csv, metrics.json-Evaluation outputs shown in the app.
 
 What we would do next
 •	Pick few-shot examples by similarity to the incoming message instead of using a fixed set.
